@@ -44,7 +44,7 @@ else:
             sample_size = min(25, population_size)
         else:
             sample_size = min(10, population_size)
-    except:
+    except ValueError:
         print("Invalid number. Defaulting to 5 samples.")
         sample_size = 5
         

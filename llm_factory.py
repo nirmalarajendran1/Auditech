@@ -1,9 +1,16 @@
 # llm_factory.py
 import google.generativeai as genai
 import os
+from dotenv import load_dotenv
 
-# PASTE YOUR GOOGLE API KEY HERE
-MY_API_KEY = ""
+load_dotenv()
+
+MY_API_KEY = os.environ.get("GOOGLE_API_KEY")
+if not MY_API_KEY:
+    raise RuntimeError(
+        "GOOGLE_API_KEY is not set. Create a .env file (see .env.example) "
+        "with your Gemini API key."
+    )
 
 # Configure the Google Library
 genai.configure(api_key=MY_API_KEY)
