@@ -1,0 +1,4 @@
+.env
+__pycache__/
+*.pyc
+Audit_Test_Sheet.xlsx
